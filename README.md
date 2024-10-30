@@ -38,12 +38,23 @@ These issues create an environment that is vulnerable to both internal and exter
    - **Endpoint Protection**: Install antivirus with state monitoring on all endpoints and servers, and configure antivirus specifically for server environments to avoid compatibility issues.
 
 ## Technical Breakdown
+
 The recommended infrastructure includes:
-- **SecurityOnion Primary Node**: 8-core CPU, 32GB RAM, 2TB SSD.
-- **SecurityOnion Sensor Nodes**: 4-core CPU, 16GB RAM, 1TB SSD per node.
-- **Network Tap and Core Switches**: 10 Gbps Layer 3 switches to support VLANs and QoS.
-- **Firewall**: pfSense XG-1541 with intrusion detection, web filtering, and VPN capabilities.
-- **Network Attached Storage (NAS)**: 10TB storage for data retention and backups.
+
+- **SecurityOnion Nodes**:
+  - **Primary Node**: Manages data processing, log ingestion, and provides a central management interface for log aggregation and analysis.
+  - **Sensor Nodes**: Placed across network segments to monitor traffic, capture packets, and generate alerts, with data forwarded to the primary node.
+
+- **Network Tap**: Passively monitors network traffic to feed data to sensor nodes without disrupting data flow.
+
+- **Firewall**: Supports deep packet inspection, intrusion detection, VPN capabilities, and traffic filtering, with multiple interfaces to manage VLAN segmentation.
+
+- **Core Switches**: Layer 3 switches with Quality of Service (QoS) and VLAN support, essential for effective network segmentation and traffic management.
+
+- **Data Retention Storage**: Network-attached storage (NAS) to handle log and data retention, meeting organizational requirements for backup and data security.
+
+> **Note**: Specific hardware specifications, including CPU, RAM, and storage, should be selected based on the organization's traffic volume, log retention needs, and processing requirements.
+
 
 ## Conclusion
 Implementing this cybersecurity maturity plan will greatly enhance the organization’s ability to detect, respond to, and mitigate security threats. By prioritizing centralized monitoring, network segmentation, and IAM controls, the enterprise will be positioned to proactively manage risks and ensure business continuity.
