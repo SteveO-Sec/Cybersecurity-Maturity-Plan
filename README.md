@@ -63,7 +63,7 @@ Implementing this cybersecurity maturity plan will greatly enhance the organizat
 ---
 
 ## Full Documentation
-For a detailed breakdown, including visuals of the current and proposed network architecture, please refer to the [Cybersecurity Maturity Plan Document](file:///C:/Users/steve/OneDrive/Desktop/GitHub%20Projects/Cybersecurity%20Maturity%20Plan.pdf).
+For a detailed breakdown, including visuals of the current and proposed network architecture, please refer to the [Cybersecurity Maturity Plan Document](https://github.com/SteveO-Sec/Cybersecurity-Maturity-Plan/blob/main/Cybersecurity%20Maturity%20Plan.pdf).
 
 ---
 
