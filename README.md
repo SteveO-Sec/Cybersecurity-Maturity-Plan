@@ -7,7 +7,7 @@ This project outlines a comprehensive cybersecurity maturity plan for an enterpr
 ## Objectives
 The main objectives of this plan are to:
 - Deploy SecurityOnion for centralized monitoring, log management, and intrusion detection.
-- Implement network segmentation through VLANs to limit lateral movement in case of a breach.
+- Implement network segmentation through VLANs to prevent lateral movement.
 - Enhance Identity and Access Management (IAM) with multi-factor authentication and restricted administrative privileges.
 - Establish essential security policies and best practices for continuous improvement.
 
@@ -15,19 +15,20 @@ The main objectives of this plan are to:
 The enterprise currently faces several security challenges, including:
 - No SIEM or central log collection system.
 - Lack of internet filtering and vulnerability management.
-- Insufficient access control: all employees have VPN access by default, and users are administrators on their endpoints.
+- Over-permissioned access control: all employees have VPN access by default, and users are administrators on their endpoints.
 - Legacy web application on an unsupported OS, creating a non-patchable vulnerability.
-- No regular password updates, with some accounts over 10 years old.
+- No password rotation policy.
   
 These issues create an environment that is vulnerable to both internal and external threats, requiring a strategic overhaul to establish a secure and reliable network.
 
 ## Key Recommendations
 ### 1. Deploy SecurityOnion
    - **Architecture**: Use one primary node for log management and multiple sensor nodes across network segments for packet analysis and alert generation.
-   - **Features**: Leverage Zeek, Suricata, and Kibana for real-time traffic analysis, threat detection, and visualization.
+   - **Features**: Utilize Zeek, Suricata, and Kibana for real-time traffic analysis, threat detection, and visualization.
 
 ### 2. Implement Network Segmentation
-   - **VLANs and DMZ**: Segment the network into VLANs for users, servers, and management to reduce risk. Place external-facing servers and the legacy web application in a DMZ to isolate them from the internal network.
+   - **VLANs**: Segment the network into VLANs for users, servers, and management to reduce risk.
+   - **DMZ**: Place external-facing servers and the legacy web application in a DMZ to isolate them from the internal network.
 
 ### 3. Enhance Identity and Access Management
    - **Multi-Factor Authentication (MFA)**: Enforce MFA for VPN access and remove unnecessary administrative privileges from users and support staff.
@@ -35,7 +36,7 @@ These issues create an environment that is vulnerable to both internal and exter
 
 ### 4. Introduce Vulnerability Management and Endpoint Security
    - **OpenVAS**: Conduct regular vulnerability scans with OpenVAS to proactively identify weaknesses.
-   - **Endpoint Protection**: Install antivirus with state monitoring on all endpoints and servers, and configure antivirus specifically for server environments to avoid compatibility issues.
+   - **Endpoint Protection**: Install antivirus with state monitoring on all endpoints and servers.
 
 ## Technical Breakdown
 
